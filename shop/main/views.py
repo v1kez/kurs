@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import *
 
 def index(request):
     data = {
@@ -10,7 +11,9 @@ def info(request):
     return render(request, 'main/info.html')
 
 def new_home(request):
-    return  render(request, 'main/new_home.html')
+    new=News.objects.order_by('-date')
+    return  render(request, 'main/new_home.html',{'new':new})
 
 def feedback_home(request):
-    return  render(request, 'main/feedback_home.html')
+    feedback = Feed.objects.order_by('-date')
+    return  render(request, 'main/feedback_home.html',{'feedback':feedback})

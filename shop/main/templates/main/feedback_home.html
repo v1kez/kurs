@@ -5,7 +5,13 @@
 {% block content %}
 <div class="features">
     <h1>Отзывы от покупателей </h1>
-
+        {% for el in feedback %}
+            <div class="alert alert-warning">
+                <h3>{{ el.fio }}</h3>
+                <p>{{ el.text }}</p>
+                <span>{{ el.date }}</span>
+            </div>
+        {% endfor %}
 
 </div>
 

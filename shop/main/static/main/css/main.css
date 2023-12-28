@@ -54,3 +54,13 @@ main .features{
 
 main .features h1{font-size: 50px;}
 main .features p{max-width:400px;}
+
+.alert-warning{
+    float: left;
+    clear:both;
+    width: 500px;
+    margin: 20px 34%;
+    text-align:center;
+    color:black;
+    background:#80e0dd;
+}
