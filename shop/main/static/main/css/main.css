@@ -64,3 +64,14 @@ main .features p{max-width:400px;}
     color:black;
     background:#80e0dd;
 }
+
+.link1{
+    display: block;
+     text-align: center;
+}
+
+.form{
+    margin-left:32%;
+    width:500px;
+    margin-top:50px;
+}
