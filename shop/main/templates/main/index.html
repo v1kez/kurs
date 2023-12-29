@@ -5,14 +5,6 @@
 {% block content %}
 <div class="features">
     <h1>{{ title }}</h1>
-    {% for el in index %}
-            <div class="alert alert-warning">
-                <p><img src="{{p.photo.url}}"></p>
-                <h3>{{ el.name }}</h3>
-                <p>{{ el.info }}</p>
-                <span>{{ el.date }}</span>
-            </div>
-        {% endfor %}
 
 </div>
 

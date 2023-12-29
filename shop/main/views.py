@@ -4,11 +4,11 @@ from .forms import FeedForm
 
 
 def index(request):
-    index = Product.objects.order_by('price')
+
     data = {
         'title': 'Главная страница'
     }
-    return render(request, 'main/index.html', data, {'index':index})
+    return render(request, 'main/index.html', data, )
 
 def info(request):
     return render(request, 'main/info.html')
