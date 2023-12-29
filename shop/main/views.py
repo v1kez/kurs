@@ -39,3 +39,9 @@ def create(request):
     }
 
     return render(request, 'main/create.html',data)
+
+def buy(request):
+    return render(request, 'main/buy.html')
+
+def vce(request):
+    return render(request, 'main/vce.html')

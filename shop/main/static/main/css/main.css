@@ -54,7 +54,7 @@ main .features{
 }
 
 main .features h1{font-size: 50px;}
-main .features p{max-width:400px;}
+
 
 .alert-warning{
     float: left;
@@ -85,4 +85,19 @@ main .features p{max-width:400px;}
     width: 100%;
     padding-left: 350px;
     padding-right: 50px;
+}
+
+.nike{
+     font-size: 16px;
+    color: #fff;
+    text-align: center;
+    padding-top: 100px;
+    width: 100%;
+    padding-left: 350px;
+    padding-right: 50px;
+}
+
+.nike img{
+    width:400px;
+    height:400px;
 }
