@@ -20,12 +20,10 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="efcf1e48-fdf5-44e0-8dd2-597faa578891" object-ref="consoles/Connection" />
-      <object connection-id="efcf1e48-fdf5-44e0-8dd2-597faa578891" object-ref="schemas/main/tables/new_articles" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="efcf1e48-fdf5-44e0-8dd2-597faa578891" dataset="main.auth_user" active-filter-id="" />
     <filter-actions connection-id="efcf1e48-fdf5-44e0-8dd2-597faa578891" dataset="main.django_migrations" active-filter-id="" />
     <filter-actions connection-id="efcf1e48-fdf5-44e0-8dd2-597faa578891" dataset="main.new_articles" active-filter-id="EMPTY_FILTER">
       <filter id="23ba7996-e6e8-4df0-8aa2-4fb980e628db" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
