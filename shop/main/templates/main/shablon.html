@@ -19,15 +19,20 @@
         <ul>
 
             {% if user.is_authenticated %}
-				 <li class="last"> {{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
+				 <li class="last"> {{user.username}} | <a href="{% url 'logout' %}" class="link">Выйти</a></li>
 				 {% else %}
-				 <li class="last"><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
+				 <li class="last"><a href="{% url 'register' %}" class="link">Регистрация</a> | <a href="{% url 'login' %}" class="link">Войти</a></li>
 				 {% endif %}
             <a href="{% url 'home' %}" class="link"><li><i class="fa-solid fa-otter"></i> Главная</li></a>
             <a href="{% url 'info' %}" class="link"><li><i class="fa-solid fa-circle-info"></i> Про нас</li></a>
             <a href="{% url 'new_home' %}" class="link"><li><i class="fa-solid fa-newspaper"></i> Новости </li></a>
             <a href="{% url 'feedback_home' %}" class="link"><li><i class="fa-solid fa-comment"></i> Отзывы</li></a>
             <br>
+            {% if user.is_staff %}
+				 <li class="last"> <a class="link" href="{% url 'history' %}">Заказы</a></li>
+				 {% else %}
+
+				 {% endif %}
             <a href="https://github.com/v1kez" class="link2"><i class="fa-brands fa-github"></i></a>
 
         </ul>

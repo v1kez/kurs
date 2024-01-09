@@ -27,3 +27,29 @@ class Feed(models.Model):
     class Meta:
         verbose_name = 'Отзыв'
         verbose_name_plural = 'Отзывы'
+
+
+EDUCATION_TYPES = (
+     ('1', 'Штаны Nike'),
+     ('2', 'Кофта СЛОН'),
+     ('3', 'Футболка-Ямайка')
+)
+EDUCATION = (
+     ('1', 'S'),
+     ('2', 'M'),
+     ('3', 'L'),
+     ('4', 'XL')
+)
+class History(models.Model):
+    tovar = models.CharField(max_length=30, verbose_name="товар",choices=EDUCATION_TYPES)
+    razmer = models.CharField(max_length=30, verbose_name="размер",choices=EDUCATION)
+    kol = models.CharField(max_length=30, verbose_name="количество товара")
+    email = models.CharField(max_length=30, verbose_name="@mail")
+    fio = models.CharField(max_length=30, verbose_name="фио")
+    date = models.DateField(verbose_name="дата")
+    text = models.TextField(verbose_name="адрес")
+
+    class Meta:
+        verbose_name = 'История заказов'
+        verbose_name_plural = 'История заказов'
+

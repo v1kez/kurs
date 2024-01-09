@@ -1,12 +1,14 @@
 from django.contrib.auth import authenticate, login
+from django.http import HttpResponseNotFound,Http404,HttpResponse
 
 from django.shortcuts import render, redirect
+from django.template import RequestContext
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import CreateView
 
 from .models import *
-from .forms import FeedForm, UserCreationForm
+from .forms import FeedForm, UserCreationForm, HistForm
 from .utils import DataMixin
 
 
@@ -48,7 +50,21 @@ def create(request):
     return render(request, 'main/create.html',data)
 
 def buy(request):
-    return render(request, 'main/buy.html')
+    error = ''
+    if request.method == 'POST':
+        form = HistForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('vce')
+        else:
+            error='ВАШ ЗАКАЗ БЫЛ ЗАПОЛНЕН НЕВЕРНО'
+    form = HistForm()
+
+    data = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'main/buy.html',data)
 
 def vce(request):
     return render(request, 'main/vce.html')
@@ -77,3 +93,14 @@ class Register(View):
             'form': form
         }
         return render(request, self.template_name, context)
+
+def history(request):
+    history = History.objects.order_by('-id')
+    return render(request, 'main/history.html', {'history': history})
+
+def pageNotFound(request, exception):
+    return HttpResponseNotFound('<h1>Страница не найдена</h1>')
+
+
+def serverError(request, exception):
+    return HttpResponseNotFound('<h1>Сервер не отвечает</h1>')

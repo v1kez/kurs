@@ -1,8 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
-from .models import Feed
-from django.forms import ModelForm, TextInput, DateTimeInput,Textarea
+from .models import Feed, History
+from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, DateInput
 
 User = get_user_model()
 class FeedForm(ModelForm):
@@ -24,6 +24,14 @@ class FeedForm(ModelForm):
                 'placeholder': 'Дата'
             })
         }
+
+class HistForm(ModelForm):
+    class Meta:
+        model=History
+        fields=['tovar','razmer','kol','email','fio','date','text']
+
+
+
 
 
 class UserCreationForm(UserCreationForm):
